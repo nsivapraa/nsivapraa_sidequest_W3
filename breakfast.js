@@ -1,7 +1,7 @@
 // NOTE: Do NOT add setup() or draw() in this file
 // setup() and draw() live in main.js
 // This file only defines:
-// 1) drawGame() → what the game screen looks like
+// 1) drawRun() → what the screen looks like
 // 2) input handlers → what happens when the player clicks or presses keys
 // 3) helper functions specific to this screen
 
@@ -12,44 +12,48 @@
 // and interact with the button on the game screen.
 // Keeping this in one object makes it easier to move,
 // resize, or restyle the button later.
-const gameBtn = {
+const breakfastBtn1 = {
   x: 400, // x position (centre of the button)
-  y: 550, // y position (centre of the button)
+  y: 310, // y position (centre of the button)
   w: 260, // width
   h: 90, // height
-  label: "PRESS HERE", // text shown on the button
+  label: "Call a friend", // text shown on the button
 };
-
+const breakfastBtn2 = {
+  x: 400, // x position (centre of the button)
+  y: 420, // y position (centre of the button)
+  w: 260, // width
+  h: 90, // height
+  label: "Take the bus", // text shown on the button
+};
 // ------------------------------
 // Main draw function for this screen
 // ------------------------------
-// drawGame() is called from main.js *only*
-// when currentScreen === "game"
-function drawGame() {
+// drawWakeup()) is called from main.js *only*
+// when currentScreen === "wakeup"
+function drawBreakfast() {
   // Set background colour for the game screen
-  background(240, 230, 140);
+  background(235, 176, 231);
 
   // ---- Title and instructions text ----
   fill(0); // black text
   textSize(32);
   textAlign(CENTER, CENTER);
-  text("Game Screen", width / 2, 160);
+  text("Oh no!", width / 2, 160);
 
   textSize(18);
-  text(
-    "Click the button (or press ENTER) for a random result.",
-    width / 2,
-    210,
-  );
+  text("You eat some breakfast. :", width / 2, 210);
 
   // ---- Draw the button ----
   // We pass the button object to a helper function
-  drawGameButton(gameBtn);
+  drawChoiceButton(breakfastBtn1);
+  drawChoiceButton(breakfastBtn2);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  cursor(isHover(gameBtn) ? HAND : ARROW);
+  const over = isHover(breakfastBtn1) || isHover(breakfastBtn2);
+  cursor(over ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -57,7 +61,7 @@ function drawGame() {
 // ------------------------------
 // This function is responsible *only* for drawing the button.
 // It does NOT handle clicks or game logic.
-function drawGameButton({ x, y, w, h, label }) {
+function drawChoiceButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 
   // Check if the mouse is hovering over the button
@@ -89,10 +93,11 @@ function drawGameButton({ x, y, w, h, label }) {
 // ------------------------------
 // This function is called from main.js
 // only when currentScreen === "game"
-function gameMousePressed() {
-  // Only trigger the outcome if the button is clicked
-  if (isHover(gameBtn)) {
-    triggerRandomOutcome();
+function breakfastMousePressed() {
+  if (isHover(breakfastBtn1)) {
+    currentScreen = "start"; // go to the "run" screen
+  } else if (isHover(breakfastBtn2)) {
+    currentScreen = "run"; // go to the "breakfast" screen
   }
 }
 
@@ -100,29 +105,12 @@ function gameMousePressed() {
 // Keyboard input for this screen
 // ------------------------------
 // Allows keyboard-only interaction (accessibility + design)
-function gameKeyPressed() {
+function breakfastKeyPressed() {
   // ENTER key triggers the same behaviour as clicking the button
-  if (keyCode === ENTER) {
-    triggerRandomOutcome();
+  if (key === "a" || key === "A") {
+    currentScreen = "start";
   }
-}
-
-// ------------------------------
-// Game logic: win or lose
-// ------------------------------
-// This function decides what happens next in the game.
-// It does NOT draw anything.
-function triggerRandomOutcome() {
-  // random() returns a value between 0 and 1
-  // Here we use a 50/50 chance:
-  // - less than 0.5 → win
-  // - 0.5 or greater → lose
-  //
-  // You can bias this later, for example:
-  // random() < 0.7 → 70% chance to win
-  if (random() < 0.5) {
-    currentScreen = "win";
-  } else {
-    currentScreen = "lose";
+  if (key === "b" || key === "B") {
+    currentScreen = "run";
   }
 }

@@ -50,9 +50,11 @@ function draw() {
 
   if (currentScreen === "start") drawStart();
   else if (currentScreen === "instr") drawInstr();
-  else if (currentScreen === "game") drawGame();
+  else if (currentScreen === "wakeup") drawWakeup();
   else if (currentScreen === "win") drawWin();
   else if (currentScreen === "lose") drawLose();
+  else if (currentScreen === "run") drawRun();
+  else if (currentScreen === "breakfast") drawBreakfast();
 
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
@@ -75,11 +77,13 @@ function mousePressed() {
 
   if (currentScreen === "start") startMousePressed();
   else if (currentScreen === "instr") instrMousePressed();
-  else if (currentScreen === "game") gameMousePressed();
+  else if (currentScreen === "wakeup") wakeupMousePressed();
   // The ?.() means “call this function only if it exists”
   // This prevents errors if a screen doesn’t implement a handler.
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
+  else if (currentScreen === "run") runMousePressed?.();
+  else if (currentScreen === "breakfast") breakfastMousePressed?.();
 }
 
 // ------------------------------
@@ -96,9 +100,11 @@ function keyPressed() {
 
   if (currentScreen === "start") startKeyPressed();
   else if (currentScreen === "instr") instrKeyPressed();
-  else if (currentScreen === "game") gameKeyPressed?.();
+  else if (currentScreen === "wakeup") wakeupKeyPressed?.();
   else if (currentScreen === "win") winKeyPressed?.();
   else if (currentScreen === "lose") loseKeyPressed?.();
+  else if (currentScreen === "run") runKeyPressed?.();
+  else if (currentScreen === "breakfast") breakfastKeyPressed?.();
 }
 
 // ------------------------------------------------------------

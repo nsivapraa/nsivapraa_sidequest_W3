@@ -33,13 +33,13 @@ const regBtn2 = {
 // when currentScreen === "run"
 function drawRegular() {
   // Set background colour for the game screen
-  background(235, 176, 231);
+  background(61, 130, 227);
 
   // ---- Title and instructions text ----
   fill(0); // black text
   textSize(32);
   textAlign(CENTER, CENTER);
-  text("You run out the door.", width / 2, 160);
+  text("You take the regular route.", width / 2, 160);
 
   textSize(18);
   text(

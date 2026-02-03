@@ -15,14 +15,14 @@
 const runBtn1 = {
   x: 400, // x position (centre of the button)
   y: 310, // y position (centre of the button)
-  w: 260, // width
+  w: 300, // width
   h: 90, // height
   label: "Take the regular route", // text shown on the button
 };
 const runBtn2 = {
   x: 400, // x position (centre of the button)
   y: 420, // y position (centre of the button)
-  w: 260, // width
+  w: 300, // width
   h: 90, // height
   label: "Take a shortcut", // text shown on the button
 };

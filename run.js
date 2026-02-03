@@ -100,7 +100,7 @@ function drawChoiceButton({ x, y, w, h, label }) {
 // only when currentScreen === "run"
 function runMousePressed() {
   if (isHover(runBtn1)) {
-    currentScreen = "win1"; // go to the "run" screen
+    currentScreen = "win1"; // go to the "win1" screen
   } else if (isHover(runBtn2)) {
     currentScreen = "breakfast"; // go to the "breakfast" screen
   }

@@ -1,28 +1,32 @@
+# nsivapraa_sidequest_W2
+
 ## Project Title
 
-GBDA302 Week 3 Example 1: Instructions Screen with Back button
+GBDA302 Side Quest 03: Interactive Story
 
 ---
 
 ## Authors
 
-Karen Cochrane and David Han
+Karen Cochrane, David Han, and Nila Sivapragasam (21080519)
 
 ---
 
 ## Description
 
-This p5.js project demonstrates a simple multi-screen game structure using a state-based approach. The example includes a start screen, an instructions screen with a back button, a basic game screen, and win/lose outcome screens. The focus is on showing how to separate screens into different files, route input based on the current game state, and design simple UI elements such as buttons and keyboard controls.
+## This game presents the user with two options on each screen. The user has to make the right choices to try and get to schol on time.
+
+## Setup and Interaction Instructions
+
+- Open Github link to launch the game
+- Mouse or keyboard can be used to make choices
+- Up arrow key is used to jump.
 
 ---
 
-## Learning Goals
+## Iteration Notes
 
-- Understand how to manage multiple game states using a shared currentScreen variable
-- Practice separating code across multiple files for readability and maintenance
-- Implement clickable and keyboard-accessible UI buttons
-- Learn how to route draw(), mousePressed(), and keyPressed() logic based on the active screen
-- Build a basic instructions screen with a functional back button
+N/A
 
 ---
 
@@ -32,8 +36,14 @@ N/A
 
 ---
 
+## References
+
+N/A
+
+---
+
 ## GenAI
 
 The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
 
----
+## I (Nila Sivapragasam) modified the code written by Dr. Karen Cochrane but did not use GenAI to make any changes.

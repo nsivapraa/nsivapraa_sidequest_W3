@@ -18,8 +18,14 @@ function drawStart() {
   fill(30, 50, 60);
   textSize(46);
   textAlign(CENTER, CENTER);
-  text("Win or Lose", width / 2, 180);
-
+  text("Oh no! You're late for school...", width / 2, 180);
+  textSize(18);
+  text(
+    "You need to make the right choices and try your best to get to school on time!",
+    width / 2,
+    240,
+    600,
+  );
   // ---- Buttons (data only) ----
   // These objects store the position/size/label for each button.
   // Using objects makes it easy to pass them into drawButton()

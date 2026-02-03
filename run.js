@@ -100,7 +100,7 @@ function drawChoiceButton({ x, y, w, h, label }) {
 // only when currentScreen === "run"
 function runMousePressed() {
   if (isHover(runBtn1)) {
-    currentScreen = "regular"; // go to the "run" screen
+    currentScreen = "win1"; // go to the "run" screen
   } else if (isHover(runBtn2)) {
     currentScreen = "breakfast"; // go to the "breakfast" screen
   }
@@ -113,7 +113,7 @@ function runMousePressed() {
 function runKeyPressed() {
   // ENTER key triggers the same behaviour as clicking the button
   if (key === "a" || key === "A") {
-    currentScreen = "regular";
+    currentScreen = "win1";
   }
   if (key === "b" || key === "B") {
     currentScreen = "breakfast";

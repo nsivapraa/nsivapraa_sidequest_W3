@@ -21,12 +21,17 @@ function drawWin() {
   textAlign(CENTER, CENTER);
 
   // Main success message
-  textSize(40);
+  textSize(32);
   text("You Win!", width / 2, 300);
 
   // Instruction text
   textSize(20);
-  text("Click or press R to return to Start.", width / 2, 360);
+  text(
+    "You take the regular route and although you arrive hungry and exhausted, you arrive nonethless. Congratulations! \n\nClick or press R to return to Start.",
+    width / 2,
+    390,
+    600,
+  );
 }
 
 // ------------------------------------------------------------

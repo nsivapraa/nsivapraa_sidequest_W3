@@ -17,7 +17,7 @@ const runBtn1 = {
   y: 310, // y position (centre of the button)
   w: 260, // width
   h: 90, // height
-  label: "Take the main path", // text shown on the button
+  label: "Take the regular route", // text shown on the button
 };
 const runBtn2 = {
   x: 400, // x position (centre of the button)
@@ -100,7 +100,7 @@ function drawChoiceButton({ x, y, w, h, label }) {
 // only when currentScreen === "run"
 function runMousePressed() {
   if (isHover(runBtn1)) {
-    currentScreen = "start"; // go to the "run" screen
+    currentScreen = "regular"; // go to the "run" screen
   } else if (isHover(runBtn2)) {
     currentScreen = "breakfast"; // go to the "breakfast" screen
   }
@@ -113,7 +113,7 @@ function runMousePressed() {
 function runKeyPressed() {
   // ENTER key triggers the same behaviour as clicking the button
   if (key === "a" || key === "A") {
-    currentScreen = "start";
+    currentScreen = "regular";
   }
   if (key === "b" || key === "B") {
     currentScreen = "breakfast";

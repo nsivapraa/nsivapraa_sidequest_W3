@@ -51,12 +51,12 @@ function draw() {
   if (currentScreen === "start") drawStart();
   else if (currentScreen === "instr") drawInstr();
   else if (currentScreen === "wakeup") drawWakeup();
-  else if (currentScreen === "win") drawWin();
-  else if (currentScreen === "lose") drawLose();
+  else if (currentScreen === "win1") drawWin1();
+  else if (currentScreen === "win2") drawWin2();
+  else if (currentScreen === "lose1") drawLose1();
+  else if (currentScreen === "lose2") drawLose2();
   else if (currentScreen === "run") drawRun();
   else if (currentScreen === "breakfast") drawBreakfast();
-  else if (currentScreen === "breakfast") drawBreakfast();
-
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
   // Later in the course you might replace it with:
@@ -81,11 +81,12 @@ function mousePressed() {
   else if (currentScreen === "wakeup") wakeupMousePressed();
   // The ?.() means “call this function only if it exists”
   // This prevents errors if a screen doesn’t implement a handler.
-  else if (currentScreen === "win") winMousePressed?.();
-  else if (currentScreen === "lose") loseMousePressed?.();
+  else if (currentScreen === "win1") win1MousePressed?.();
+  else if (currentScreen === "win2") winMousePressed?.();
+  else if (currentScreen === "lose1") lose1MousePressed?.();
+  else if (currentScreen === "lose2") lose2MousePressed?.();
   else if (currentScreen === "run") runMousePressed?.();
   else if (currentScreen === "breakfast") breakfastMousePressed?.();
-  else if (currentScreen === "regular") regularMousePressed?.();
 }
 
 // ------------------------------
@@ -103,11 +104,12 @@ function keyPressed() {
   if (currentScreen === "start") startKeyPressed();
   else if (currentScreen === "instr") instrKeyPressed();
   else if (currentScreen === "wakeup") wakeupKeyPressed?.();
-  else if (currentScreen === "win") winKeyPressed?.();
-  else if (currentScreen === "lose") loseKeyPressed?.();
+  else if (currentScreen === "win1") win1KeyPressed?.();
+  else if (currentScreen === "win2") win2KeyPressed?.();
+  else if (currentScreen === "lose1") lose1KeyPressed?.();
+  else if (currentScreen === "lose2") lose2KeyPressed?.();
   else if (currentScreen === "run") runKeyPressed?.();
   else if (currentScreen === "breakfast") breakfastKeyPressed?.();
-  else if (currentScreen === "regular") regularKeyPressed?.();
 }
 
 // ------------------------------------------------------------

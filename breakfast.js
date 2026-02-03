@@ -1,7 +1,7 @@
 // NOTE: Do NOT add setup() or draw() in this file
 // setup() and draw() live in main.js
 // This file only defines:
-// 1) drawRun() → what the screen looks like
+// 1) drawBreakfast() → what the screen looks like
 // 2) input handlers → what happens when the player clicks or presses keys
 // 3) helper functions specific to this screen
 
@@ -30,7 +30,7 @@ const breakfastBtn2 = {
 // Main draw function for this screen
 // ------------------------------
 // drawWakeup()) is called from main.js *only*
-// when currentScreen === "wakeup"
+// when currentScreen === "breakfast"
 function drawBreakfast() {
   // Set background colour for the game screen
   background(235, 176, 231);
@@ -43,7 +43,7 @@ function drawBreakfast() {
 
   textSize(18);
   text(
-    "After eating, you're even more late! Do you call a friend to give you a ride or take the bus?:",
+    "After eating, you're even more late! Do you call a friend to give you a ride or take the bus?",
     width / 2,
     210,
     600,
@@ -97,7 +97,7 @@ function drawChoiceButton({ x, y, w, h, label }) {
 // Mouse input for this screen
 // ------------------------------
 // This function is called from main.js
-// only when currentScreen === "game"
+// only when currentScreen === "breakfast"
 function breakfastMousePressed() {
   if (isHover(breakfastBtn1)) {
     currentScreen = "start"; // go to the "run" screen

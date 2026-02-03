@@ -102,7 +102,7 @@ function runMousePressed() {
   if (isHover(runBtn1)) {
     currentScreen = "win1"; // go to the "win1" screen
   } else if (isHover(runBtn2)) {
-    currentScreen = "breakfast"; // go to the "breakfast" screen
+    currentScreen = "lose1"; // go to the "breakfast" screen
   }
 }
 
@@ -116,6 +116,6 @@ function runKeyPressed() {
     currentScreen = "win1";
   }
   if (key === "b" || key === "B") {
-    currentScreen = "breakfast";
+    currentScreen = "lose1";
   }
 }

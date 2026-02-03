@@ -55,6 +55,7 @@ function draw() {
   else if (currentScreen === "lose") drawLose();
   else if (currentScreen === "run") drawRun();
   else if (currentScreen === "breakfast") drawBreakfast();
+  else if (currentScreen === "breakfast") drawBreakfast();
 
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
@@ -84,6 +85,7 @@ function mousePressed() {
   else if (currentScreen === "lose") loseMousePressed?.();
   else if (currentScreen === "run") runMousePressed?.();
   else if (currentScreen === "breakfast") breakfastMousePressed?.();
+  else if (currentScreen === "regular") regularMousePressed?.();
 }
 
 // ------------------------------
@@ -105,6 +107,7 @@ function keyPressed() {
   else if (currentScreen === "lose") loseKeyPressed?.();
   else if (currentScreen === "run") runKeyPressed?.();
   else if (currentScreen === "breakfast") breakfastKeyPressed?.();
+  else if (currentScreen === "regular") regularKeyPressed?.();
 }
 
 // ------------------------------------------------------------

@@ -12,14 +12,14 @@
 // and interact with the button on the game screen.
 // Keeping this in one object makes it easier to move,
 // resize, or restyle the button later.
-const Btn1 = {
+const wakeBtn1 = {
   x: 400, // x position (centre of the button)
   y: 310, // y position (centre of the button)
   w: 260, // width
   h: 90, // height
   label: "Run out the door", // text shown on the button
 };
-const Btn2 = {
+const wakeBtn2 = {
   x: 400, // x position (centre of the button)
   y: 420, // y position (centre of the button)
   w: 260, // width
@@ -50,13 +50,13 @@ function drawWakeup() {
 
   // ---- Draw the button ----
   // We pass the button object to a helper function
-  drawChoiceButton(Btn1);
-  drawChoiceButton(Btn2);
+  drawChoiceButton(wakeBtn1);
+  drawChoiceButton(wakeBtn2);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  const over = isHover(Btn1) || isHover(Btn2);
+  const over = isHover(wakeBtn1) || isHover(wakeBtn2);
   cursor(over ? HAND : ARROW);
 }
 
@@ -98,9 +98,9 @@ function drawChoiceButton({ x, y, w, h, label }) {
 // This function is called from main.js
 // only when currentScreen === "game"
 function wakeupMousePressed() {
-  if (isHover(Btn1)) {
+  if (isHover(wakeBtn1)) {
     currentScreen = "run"; // go to the "run" screen
-  } else if (isHover(Btn2)) {
+  } else if (isHover(wakeBtn2)) {
     currentScreen = "breakfast"; // go to the "breakfast" screen
   }
 }

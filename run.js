@@ -12,14 +12,14 @@
 // and interact with the button on the game screen.
 // Keeping this in one object makes it easier to move,
 // resize, or restyle the button later.
-const Btn1 = {
+const runBtn1 = {
   x: 400, // x position (centre of the button)
   y: 310, // y position (centre of the button)
   w: 260, // width
   h: 90, // height
   label: "Take the main path", // text shown on the button
 };
-const Btn2 = {
+const runBtn2 = {
   x: 400, // x position (centre of the button)
   y: 420, // y position (centre of the button)
   w: 260, // width
@@ -30,7 +30,7 @@ const Btn2 = {
 // Main draw function for this screen
 // ------------------------------
 // drawWakeup()) is called from main.js *only*
-// when currentScreen === "wakeup"
+// when currentScreen === "run"
 function drawRun() {
   // Set background colour for the game screen
   background(235, 176, 231);
@@ -39,20 +39,25 @@ function drawRun() {
   fill(0); // black text
   textSize(32);
   textAlign(CENTER, CENTER);
-  text("Oh no!", width / 2, 160);
+  text("You run out the door.", width / 2, 160);
 
   textSize(18);
-  text("You run out the door. :", width / 2, 210);
+  text(
+    "To get to school, you can either take the regular route or take a shortcut through the park. Which do you choose?",
+    width / 2,
+    210,
+    600,
+  );
 
   // ---- Draw the button ----
   // We pass the button object to a helper function
-  drawChoiceButton(Btn1);
-  drawChoiceButton(Btn2);
+  drawChoiceButton(runBtn1);
+  drawChoiceButton(runBtn2);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  const over = isHover(Btn1) || isHover(Btn2);
+  const over = isHover(runBtn1) || isHover(runBtn2);
   cursor(over ? HAND : ARROW);
 }
 
@@ -92,11 +97,11 @@ function drawChoiceButton({ x, y, w, h, label }) {
 // Mouse input for this screen
 // ------------------------------
 // This function is called from main.js
-// only when currentScreen === "game"
+// only when currentScreen === "run"
 function runMousePressed() {
-  if (isHover(Btn1)) {
+  if (isHover(runBtn1)) {
     currentScreen = "start"; // go to the "run" screen
-  } else if (isHover(Btn2)) {
+  } else if (isHover(runBtn2)) {
     currentScreen = "breakfast"; // go to the "breakfast" screen
   }
 }

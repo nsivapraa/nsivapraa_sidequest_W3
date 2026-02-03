@@ -26,6 +26,7 @@ function drawLose1() {
     "Due to construction, the shortcut in the park is closed off. You end up having to take an even longer route and get to school late. \n\nClick or press R to return to Start.",
     width / 2,
     390,
+    600,
   );
 }
 

@@ -1,15 +1,15 @@
 // NOTE: Do NOT add setup() or draw() in this file
 // setup() and draw() live in main.js
 // This file only defines:
-// 1) drawLose1() → what the lose1 screen looks like
+// 1) drawLose2() → what the lose2 screen looks like
 // 2) input handlers → how the player returns to the start screen
 
 // ------------------------------
-// Main draw function for lose1 screen
+// Main draw function for lose2 screen
 // ------------------------------
-// drawLose1() is called from main.js
-// only when currentScreen === "lose1"
-function drawLose1() {
+// drawLose2() is called from main.js
+// only when currentScreen === "lose2"
+function drawLose2() {
   // Red-tinted background to communicate failure
   background(255, 210, 210);
 
@@ -23,26 +23,27 @@ function drawLose1() {
   // Instruction text
   textSize(20);
   text(
-    "Due to construction, the shortcut in the park is closed off. You end up having to take an even longer route and get to school late. \n\nClick or press R to return to Start.",
+    "The bus is delayed by 20 minutes, and as a result, you get to school late. \n\nClick or press R to return to Start.",
     width / 2,
     390,
+    600,
   );
 }
 
 // ------------------------------
-// Mouse input for lose1 screen
+// Mouse input for lose2 screen
 // ------------------------------
 // Any mouse click returns the player to the start screen
 // (no buttons needed for this simple end state)
-function lose1MousePressed() {
+function lose2MousePressed() {
   currentScreen = "start";
 }
 
 // ------------------------------
-// Keyboard input for lose1 screen
+// Keyboard input for lose2 screen
 // ------------------------------
 // R is commonly used for “restart” in games
-function lose1KeyPressed() {
+function lose2KeyPressed() {
   if (key === "r" || key === "R") {
     currentScreen = "start";
   }
